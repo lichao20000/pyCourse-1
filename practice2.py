@@ -12,11 +12,10 @@ from email.header import Header
 def read_csv(path):
     with open(path,"r") as f:
         csv_read = csv.reader(f)
+        next(csv_read)
         for line in csv_read:
             name = line[0]
             email = line[1]
-            if name == 'name':
-                continue
             print("姓名： "+ name + ",邮箱：" +email)
         
 
